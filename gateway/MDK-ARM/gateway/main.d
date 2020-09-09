@@ -31,6 +31,14 @@ gateway\main.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_spi.h
 gateway\main.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h
 gateway\main.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h
 gateway\main.o: ../Inc/dma.h
-gateway\main.o: ../Inc/usart.h
 gateway\main.o: ../Inc/spi.h
+gateway\main.o: ../Inc/usart.h
 gateway\main.o: ../Inc/gpio.h
+gateway\main.o: ..\BSP\ether_hal.h
+gateway\main.o: ..\BSP\SX127X_Hal.h
+gateway\main.o: D:\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+gateway\main.o: ..\BSP\SX127X_Driver.h
+gateway\main.o: ../Src/main_app.h
+gateway\main.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+gateway\main.o: D:\keil\ARM\ARMCC\Bin\..\include\string.h
+gateway\main.o: ..\BSP\stm_flash.h

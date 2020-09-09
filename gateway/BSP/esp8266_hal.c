@@ -116,6 +116,7 @@ uint8_t atk_8266_send_cmd(uint8_t *cmd,uint8_t *ack,uint32_t waittime)
 			 //进入发送状态
 			 case 0 : 
 				            wifi_send_string(cmd);
+			 
 			 HAL_UART_Receive_DMA(&wifi_usart,(uint8_t *)ESP8266.RX_pData, RX_LEN);//放在这里最好
 			                    comumtate=1; 
 			                    wait_tim_sta=HAL_GetTick();

@@ -87,7 +87,7 @@ ARM Macro Assembler    Page 2
                                EQU              0x1000
    46 00000000         
    47 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
-=3
+=4
    48 00000000         Stack_Mem
                                SPACE            Stack_Size
    49 00001000         __initial_sp
@@ -102,7 +102,7 @@ ARM Macro Assembler    Page 2
                                EQU              0x400
    57 00001000         
    58 00001000                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
-3
+4
    59 00000000         __heap_base
    60 00000000         Heap_Mem
                                SPACE            Heap_Size

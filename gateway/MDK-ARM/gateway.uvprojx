@@ -134,11 +134,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4107</DriverSelection>
+            <DriverSelection>4101</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32L051xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc; ../Drivers/STM32L0xx_HAL_Driver/Inc; ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32L0xx/Include; ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32L0xx_HAL_Driver/Inc;../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32L0xx/Include;../Drivers/CMSIS/Include;..\BSP;..\BSP</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -393,6 +393,11 @@
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
+              <FileName>main_app.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\main_app.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
@@ -408,14 +413,14 @@
               <FilePath>../Src/dma.c</FilePath>
             </File>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/usart.c</FilePath>
-            </File>
-            <File>
               <FileName>spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/usart.c</FilePath>
             </File>
             <File>
               <FileName>stm32l0xx_it.c</FileName>
@@ -433,14 +438,9 @@
           <GroupName>Drivers/STM32L0xx_HAL_Driver</GroupName>
           <Files>
             <File>
-              <FileName>stm32l0xx_hal_uart.c</FileName>
+              <FileName>stm32l0xx_hal_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l0xx_hal_uart_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_spi.c</FilePath>
             </File>
             <File>
               <FileName>stm32l0xx_hal.c</FileName>
@@ -508,11 +508,6 @@
               <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.c</FilePath>
             </File>
             <File>
-              <FileName>stm32l0xx_hal_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_spi.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32l0xx_hal_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.c</FilePath>
@@ -521,6 +516,16 @@
               <FileName>stm32l0xx_hal_tim_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l0xx_hal_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l0xx_hal_uart_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart_ex.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -538,19 +543,14 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>bsp_EEPROM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\bsp_EEPROM.c</FilePath>
-            </File>
-            <File>
               <FileName>DEBUG_USART_HAL.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\DEBUG_USART_HAL.c</FilePath>
             </File>
             <File>
-              <FileName>esp8266_hal.c</FileName>
+              <FileName>SX127X_Hal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\esp8266_hal.c</FilePath>
+              <FilePath>..\BSP\SX127X_Hal.c</FilePath>
             </File>
             <File>
               <FileName>SX127X_Driver.c</FileName>
@@ -558,9 +558,24 @@
               <FilePath>..\BSP\SX127X_Driver.c</FilePath>
             </File>
             <File>
-              <FileName>SX127X_Hal.c</FileName>
+              <FileName>ether_hal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\SX127X_Hal.c</FilePath>
+              <FilePath>..\BSP\ether_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>sm4_app.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\sm4_app.c</FilePath>
+            </File>
+            <File>
+              <FileName>sm4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\sm4.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\stm_flash.c</FilePath>
             </File>
           </Files>
         </Group>
